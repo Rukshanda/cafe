@@ -6,7 +6,7 @@ import gal4 from '../images/coffee-gal-4.png'
 import gal5 from '../images/coffee-gal-5.jpg'
 const CoffeeGallery = () => {
     return (
-        <div className="gallery-container">
+        <div className="gallery-container pt-[50px]">
             <div className="gallery-item">
                 <img src={gal2} alt="Coffee 1" />
             </div>

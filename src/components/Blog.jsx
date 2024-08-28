@@ -9,7 +9,7 @@ import blog6 from "../images/blog-6.jpg";
 function Blog() {
   return (
     <div className="blog-section">
-      <div className="blog--subsec pt-[40px]">
+      <div className="blog--subsec pt-[60px]">
         <h1>Latest Blogs</h1>
         <div className="w-[100%] blog--cont py-[60px]">
           <div className="blog--boxes flex flex-row gap-[20px] justify-center">

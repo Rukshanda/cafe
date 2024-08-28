@@ -17,7 +17,7 @@ function Topbar() {
 
 
             
-            <div className='flex items-center lg:!justify-center md:!justify-start !justify-center gap-[5px] lg:!w-[40%]  !w-[100%] md:!w-[50%] sm:py-0 py-[10px]'>
+            <div className='flex items-center lg:!justify-center sm:!justify-start justify-center gap-[5px] lg:!w-[40%]  !w-[100%] md:!w-[50%] sm:py-0 py-[10px]'>
                 <img src={coffebean} alt="Coffee Beans" />
                 <h1 className='logo-text'>
                     Caffé
