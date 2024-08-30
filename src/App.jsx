@@ -10,6 +10,7 @@ import { getCurrentUser, logout } from "./services/apiAuth"; // Import supabase 
 import Footer from "./components/Footer";
 import Topbar from "./components/Topbar";
 import Blog from "./components/Blog";
+import AboutUsPage from "./pages/AboutUsPage";
 
 const App = () => {
   const [isLoginVisible, setIsLoginVisible] = useState(false);
@@ -81,6 +82,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="profile" element={<ProfilePage />} />
           <Route path="cart" element={<CartPage />} />
+          <Route path="aboutus" element={<AboutUsPage />} />
         </Routes>
  
 

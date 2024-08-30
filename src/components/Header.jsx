@@ -27,10 +27,13 @@ function Header({
           <div className="nav-list items-center">
             <ul className="flex items-center gap-[30px]">
               <NavLink to="/" className="nav-link">Home</NavLink>
+              <NavLink to="/aboutus" className="nav-link">About US</NavLink>
+              <NavLink to="/blogs" className="nav-link">About US</NavLink>
               {isLoggedIn ? (
                 <>
                   <NavLink to="/profile" className="nav-link">Profile</NavLink>
                   <NavLink to="/cart" className="nav-link">Cart</NavLink>
+                  
                   <li onClick={handleLogout} className="nav-link">Log out</li>
                 </>
               ) : (
