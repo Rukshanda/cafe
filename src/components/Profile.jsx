@@ -65,7 +65,7 @@ function Profile() {
           </div>
           <div className="profilesDetails-sec">
          
-          <form onSubmit={handleUpdateName} className="flex flex-row items-center updateSec">
+          <form onSubmit={handleUpdateName} className="sm:flex !none flex-row items-center updateSec">
             <label className="text-[1.1rem] profile-text flex items-center">
              <span>
              Update Name:
@@ -82,7 +82,9 @@ function Profile() {
               {loading ? "Updating..." : "Update Name"}
             </button>
           </form>
-          <div className="mt-[30px]">
+
+
+          <div className="w-[100%] mt-[30px]">
           <h2 className="profile-text">Order History</h2>
           <ul>
             {orderHistory.map((order) => (
@@ -91,22 +93,22 @@ function Profile() {
                   {order.products.map((product) => (
                     <li
                       key={product.id}
-                      className="flex justify-between items-center profile-text oderedItem"
+                      className="flex  justify-between items-center profile-text oderedItem"
                     >  
-                    <div className="w-[100px] h-[80px] profProduct-img">
+                    <div className="xsm:w-[100px] xxsm:w-[50%] w-[80%] h-[80px] profProduct-img">
                     <img src={product.pic} alt=""  className="w-full h-full"/>
 
                       </div> 
                       <p className="flex justify-around items-center w-[400px]">
-                        <span>Order ID:</span>
+                        <span className="smTxt">Order ID:</span>
                         <span>{order.id}</span>
                       </p>
                       <p className="flex justify-around items-center w-[400px]">
-                        <span>Prodcut:</span>
+                        <span className="smTxt">Prodcut:</span>
                         <span>{product.name}</span>
                       </p>
                       <p className="flex justify-around items-center w-[400px]">
-                        <span>Price:</span>
+                        <span className="smTxt">Price:</span>
                         <span>${product.price}.00</span>
                       </p>
                     </li>

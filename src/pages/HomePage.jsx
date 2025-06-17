@@ -32,7 +32,7 @@ function HomePage() {
             <div className="borderBottom"></div>
             <BrandBar />
             <div className="borderBottom"></div>
-            <Testimonials />
+            {/* <Testimonials /> */}
             <Products />
             <CoffeeGallery />
             <Blog/>

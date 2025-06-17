@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import Spinner from "./Spinner";
+import Cards from "../utils/Cards";
 
 function Products() {
   const [items, setItems] = useState([]);
@@ -79,7 +80,7 @@ function Products() {
     <div className="products-sec">
       <h1>Our Coffees</h1>
       <div className="toggle-bar flex items-center justify-center">
-        <div className="bar flex gap-[30px]">
+        <div className="bar flex md:gap-[30px] gap-[10px] justify-center flex-wrap">
           <div
             className={`pro-bar ${selectedTag === "featured" ? "active-bar" : ""}`}
             onClick={() => setSelectedTag("featured")}
@@ -104,44 +105,48 @@ function Products() {
       {loading ? (
         <div className="loading-indicator">
           <Spinner/>
-        </div> // Display loading indicator
+        </div> 
       ) : (
         <Swiper
-          modules={[Navigation]}
-          navigation
-          spaceBetween={5}
-          slidesPerView={4}
-          loop={false}
-        >
-          {items.map((el, index) => (
-            <SwiperSlide key={index} className="product-slide">
-              <li key={index} id={el.id}>
-                <div className="product-box">
-                  <div className="product-img">
-                    <img src={el.pic} alt={el.name} />
-                  </div>
-                  <div className="product-name text-center">
-                    <h3>{el.name}</h3>
-                  </div>
-                  <div className="product-det flex items-center justify-between">
-                    <div
-                      className={`addTocart-btn ${
-                        selectedItems.includes(el.id) ? "selectedCart" : ""
-                      }`}
-                      onClick={() => addToCart(el.id)}
-                    >
-                      <FaCartArrowDown />
-                    </div>
-                    <div className="product-price flex items-center">
-                      <h4 className="text-[1.7rem]">{el.price}.00</h4>
-                      <FaDollarSign className="dollar" />
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        modules={[Navigation]}
+        navigation
+        spaceBetween={2}
+        slidesPerView={4}  
+        loop={false}
+        breakpoints={{
+          320: {
+            slidesPerView: 1, 
+            spaceBetween: 10,
+          },
+          550: {
+            slidesPerView: 2, 
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 3,  
+            spaceBetween: 20,
+          },
+          1440: {
+            slidesPerView: 4,  
+            spaceBetween: 20,
+          },
+        }}
+      >
+        {items.map((el, index) => (
+          <SwiperSlide key={index} className="product-slide">
+            <Cards 
+              index={index} 
+              ID={el.id} 
+              name={el.name} 
+              pic={el.pic} 
+              price={el.price} 
+              selectedItems={selectedItems} 
+              addToCart={addToCart} 
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      
       )}
     </div>
   );

@@ -23,8 +23,8 @@ const SignUp = ({ onSignUpSuccess }) => {
       <div className='form-sec'>
         <div className="form">
         <div className="form-box">
-          <Logo width='100px' />
-          <form onSubmit={handleSignup} className='form-styles'>
+        <Logo width="100px" additional="justify-center" />
+        <form onSubmit={handleSignup} className='form-styles'>
             <input
               type="text"
               placeholder="Full Name"

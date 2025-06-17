@@ -1,12 +1,16 @@
 import React from 'react'
-import logo from '../images/logo.png'
-function Logo({width = "80px"}) {
-    return (
-        <div>
-            <img src={logo} alt="Logo" width={width} />
+import coffebean from "../images/coffee-beans.png"
 
-        </div>
-    )
+function Logo({additional}) {
+  return (
+      
+    <div className={`flex items-center gap-[5px] ${additional}`}>
+    <img src={coffebean} alt="Coffee Beans" />
+    <h1 className='logo-text'>
+        Caffé
+    </h1>
+</div>
+  )
 }
 
 export default Logo

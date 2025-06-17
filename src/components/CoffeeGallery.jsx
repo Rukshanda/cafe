@@ -1,12 +1,12 @@
 import React from 'react';
 import gal1 from '../images/coffee-gal-1.jpg'
 import gal2 from '../images/coffee-gal-2.jpg'
-import gal3 from '../images/coffee-gal-3.png'
-import gal4 from '../images/coffee-gal-4.png'
+import gal3 from '../images/coffee-gal-3.jpg'
+import gal4 from '../images/coffee-gal-4.jpg'
 import gal5 from '../images/coffee-gal-5.jpg'
 const CoffeeGallery = () => {
     return (
-        <div className="gallery-container pt-[50px]">
+        <div className="gallery-container pt-[80px]">
             <div className="gallery-item">
                 <img src={gal2} alt="Coffee 1" />
             </div>
@@ -27,3 +27,5 @@ const CoffeeGallery = () => {
 };
 
 export default CoffeeGallery;
+
+

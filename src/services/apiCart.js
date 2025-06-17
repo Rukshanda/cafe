@@ -89,8 +89,9 @@ export const clearCart = async (user_id) => {
 
 
  
-// Function to update the quantity or delete the cart item
-export const updateOrDeleteCartItem = async (userId, productId) => {
+// Updated function to handle both increment and decrement actions
+export const updateOrDeleteCartItem = async (userId, productId, action) => {
+  // Fetch the cart item for the given user and product
   const { data: cartItems, error: fetchError } = await supabase
     .from("Cart")
     .select("*")
@@ -105,10 +106,12 @@ export const updateOrDeleteCartItem = async (userId, productId) => {
   if (cartItems.length > 0) {
     const cartItem = cartItems[0];
 
-    if (cartItem.quantity > 1) {
+    // Check the action and update quantity accordingly
+    if (action === "increment") {
+      // Increment quantity
       const { data, error } = await supabase
         .from("Cart")
-        .update({ quantity: cartItem.quantity - 1 })
+        .update({ quantity: cartItem.quantity + 1 })
         .eq("id", cartItem.id);
 
       if (error) {
@@ -117,15 +120,31 @@ export const updateOrDeleteCartItem = async (userId, productId) => {
       }
 
       return data;
-    } else {
-      const { error } = await supabase
-        .from("Cart")
-        .delete()
-        .eq("id", cartItem.id);
+    } else if (action === "decrement") {
+      if (cartItem.quantity > 1) {
+        // Decrement quantity
+        const { data, error } = await supabase
+          .from("Cart")
+          .update({ quantity: cartItem.quantity - 1 })
+          .eq("id", cartItem.id);
 
-      if (error) {
-        console.error(error);
-        return;
+        if (error) {
+          console.error(error);
+          return;
+        }
+
+        return data;
+      } else {
+        // If quantity is 1, delete the item
+        const { error } = await supabase
+          .from("Cart")
+          .delete()
+          .eq("id", cartItem.id);
+
+        if (error) {
+          console.error(error);
+          return;
+        }
       }
     }
   }

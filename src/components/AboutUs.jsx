@@ -1,10 +1,10 @@
 import React from "react";
 import about1 from "../images/about-1.jpg";
-import about2 from "../images/about-2.png";
+import about2 from "../images/about-2.jpg";
 import about3 from "../images/about-3.jpg";
 import about4 from "../images/about-4.jpg";
 import about5 from "../images/about-5.jpg";
-import about6 from "../images/about-6.png";
+import about6 from "../images/about-6.jpg";
 import about7 from "../images/about-7.jpg";
 import mission from "../images/mission.png"
 import vision from "../images/vision.png"
@@ -20,6 +20,7 @@ import person7 from "../images/person-7.jpg"
 import person8 from "../images/person-8.jpg"
  
 import ReviewSection from "./Reviews";
+import PageBanner from "../utils/PageBanner";
 
 const images = [
   { id: "IMG1", src: about1 },
@@ -34,14 +35,12 @@ const images = [
 function AboutUs() {
   return (
     <div>
-      <div className="banner">
-        <div className="about-banner ">
-          <div className="about-banner--bg">
-            <h3 className="">About US</h3>
-          </div>
+      <div className="aboutus">
+        <div className="aboutus-sec">
+          <PageBanner bannertext="About us"/>
 
-          <div className="about-story flex pt-[150px] px-[120px] gap-[80px]">
-            <div className="about-story--textsec w-[60%]">
+          <div className="about-story flex md:flex-row flex-col md:pt-[150px] pt-[70px] xl:px-[120px] lg:px-[80px] md:px-[60px] px-[40px]  lg:gap-[80px] gap-[40px]">
+            <div className="about-story--textsec md:w-[60%] w-[100%]">
               <h1>Our Story</h1>
               <br />
               <p className="text-[1.16rem] font-[500]">
@@ -79,7 +78,7 @@ function AboutUs() {
                 brewed with love and dedication.
               </p>
             </div>
-            <div className="grid-container w-[40%]">
+            <div className="grid-container md:w-[40%] w-[100%]">
               {images.map((image) => (
                 <div
                   key={image.id}
@@ -90,8 +89,8 @@ function AboutUs() {
               ))}
             </div>
           </div>
-          <div className="about-cards py-[80px]  pt-[150px]">
-              <div className="about-cards--boxes flex gap-[100px] justify-center">
+          <div className="about-cards py-[80px]  pt-[150px]  px-[20px]">
+              <div className="about-cards--boxes flex md:flex-row flex-col xl:gap-[100px] lg:gap-[80px] gap-[40px] justify-center">
                   <div className="about-cards--box flex flex-col items-center">
                     <div className="about-box--img  ">
                       <img src={mission} alt="" />

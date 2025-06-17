@@ -1,9 +1,9 @@
 import React from "react";
-import FooterLogo from "./FooterLogo";
-import person1 from "../images/person-1.jpg"
+ import person1 from "../images/person-1.jpg"
 import person2 from "../images/person-2.jpg"
 import person3 from "../images/person-3.jpg"
 import person4 from "../images/person-4.jpg"
+import cofeebean from "../images/coffee-beans2.png"
 
 import {
   FaCcDiscover,
@@ -19,11 +19,16 @@ import {
 function Footer() {
   return (
     <div className="footer-sec">
-      <div className="footer flex flex-row justify-around items-center w-[100%]">
-        <div className="footer-logo flex flex-col justify-center w-[35%]">
-          <div className="footer-logo--img">
-            <FooterLogo width="130px"/>
-          </div>
+      <div className="footer flex md:flex-row flex-col gap-[180px] !justify-center items-center w-[100%]">
+        <div className="footer-logo xsm:px-[50px] px-[10px] gap-[20px]  flex flex-col justify-center md:w-[40%] w-[100%] py-[40px]">
+                    
+        <div className='flex items-center  gap-[5px]'>
+                <img src={cofeebean} alt="Coffee Beans" />
+                <h1 className='logo-text2'>
+                    Caffé
+                </h1>
+            </div>
+
           <div className="footer-logo--text">
             Awaken your senses with our artisan brews. Freshly roasted,
             passionately crafted. Join the coffee revolution today!
@@ -64,53 +69,55 @@ function Footer() {
           </div>
         </div>
         </div>
-        <div className="footer-info w-[15%] mt-[100px]">
+        <div className="footer-content-cont md:pt-[50px] flex xsm:flex-row flex-col justify-center items-start xsm:px-[50px] px-[10px]  lg:gap-[60px] md:!gap-[30px] sm:gap-[15px] xsm:!gap-[60px] gap-[30px] md:w-[55%] w-[100%]">
+        <div className="footer-info w-full">
           <h3 className="tag-txt">Informtion</h3>
-          <ul className="flex flex-col w-[100%] justify-center">
+          <ul className="xsm:flex xsm:flex-col grid grid-cols-2  w-[100%] ">
             <li>About Us</li>
             <li>Privacy Policy</li>
-            <li>Terms & Conditions</li>
             <li>Contact Us</li>
+            <li>Terms & Conditions</li>
             <li>FAQ</li>
           </ul>
 
           
         </div>
-        <div className="footer-contributer w-[15%] mt-[100px]">
-          <ul className="flex flex-col  justify-center">
-          <h3 className="tag-txt">Contirbuters</h3>
+        <div className="footer-contributer w-full  ">
+        <h3 className="tag-txt ">Contirbuters</h3>
+          <ul className="xsm:flex xsm:flex-col grid grid-cols-2 ">
+         
 
-            <li className="flex flex-row items-center justify-between w-[180px] p-[4px] mt-[4px]">
+            <li className="flex flex-row items-center xsm:gap-[10px]  gap-[5px] xxsm:w-[180px] w-[100%] p-[10px] mt-[4px]">
               <span className="contributer-img">
-                <img src={person1} alt="" className="w-[50px] h-[50px] rounded-full"/>
+                <img src={person1} alt="" className=" xsm:w-[50px] xsm:h-[50px] xxsm:size-[35px] xxsm:block rounded-full"/>
               </span>
               <span className="contirbuter-name">Jonas smith</span>
             </li>
-            <li className="flex flex-row items-center justify-between w-[180px] p-[4px] mt-[4px]">
+            <li className="flex flex-row items-center xsm:gap-[10px]  gap-[5px] xxsm:w-[180px] w-[100%] p-[10px] mt-[4px]">
               <span className="contributer-img">
-                <img src={person2} alt="" className="w-[50px] h-[50px] rounded-full"/>
+                <img src={person2} alt="" className=" xsm:w-[50px] xsm:h-[50px] xxsm:size-[35px] xxsm:block rounded-full"/>
               </span>
               <span className="contirbuter-name">Olivia Rodger</span>
             </li>
-            <li className="flex flex-row items-center justify-between w-[180px] p-[4px] mt-[4px]">
+            <li className="flex flex-row items-center xsm:gap-[10px]  gap-[5px] xxsm:w-[180px] w-[100%] p-[10px] mt-[4px]">
               <span className="contributer-img">
-                <img src={person3} alt="" className="w-[50px] h-[50px] rounded-full"/>
+                <img src={person3} alt="" className=" xsm:w-[50px] xsm:h-[50px] xxsm:size-[35px] xxsm:block rounded-full"/>
               </span >
               <span className="contirbuter-name">Thomas Rover</span>
             </li>
-            <li className="flex flex-row items-center justify-between w-[180px] p-[4px] mt-[4px]">
+            <li className="flex flex-row items-center xsm:gap-[10px]  gap-[5px] xxsm:w-[180px] w-[100%] p-[10px] mt-[4px]">
               <span className="contributer-img">
-                <img src={person4} alt="" className="w-[50px] h-[50px] rounded-full"/>
+                <img src={person4} alt="" className=" xsm:w-[50px] xsm:h-[50px] xxsm:size-[35px] xxsm:block rounded-full"/>
               </span>
               <span className="contirbuter-name">Vince Simon</span>
             </li>
           </ul>
         </div>
-      <div className="footer-locations w-[15%] mt-[80px]">
+      <div className="footer-locations w-full">
         <div>
         <h3 className="tag-txt">Locations</h3>
 
-        <ul className="flex flex-col justify-center">
+        <ul className="xsm:flex xsm:flex-col grid grid-cols-2">
           <li className="loc-text">Lahore</li>
           <li className="loc-text">Karachi</li>
           <li className="loc-text">Islamabad</li>
@@ -120,6 +127,8 @@ function Footer() {
         </div>
      
       </div>
+        </div>
+      
        
       </div>
     </div>

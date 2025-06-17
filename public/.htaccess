@@ -1,0 +1,26 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Handle React Router
+RewriteBase /
+
+# Redirect all requests to the index.html, except for files and directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ /index.html [L,QSA]
+
+# Optional: Serve gzip compressed files if available
+<IfModule mod_headers.c>
+    # Serve gzip compressed CSS files
+    RewriteCond %{REQUEST_FILENAME} \.css$
+    RewriteCond %{REQUEST_FILENAME}\.gz -f
+    RewriteRule ^(.*)\.css$ $1\.css\.gz [QSA]
+
+    # Serve gzip compressed JS files
+    RewriteCond %{REQUEST_FILENAME} \.js$
+    RewriteCond %{REQUEST_FILENAME}\.gz -f
+    RewriteRule ^(.*)\.js$ $1\.js\.gz [QSA]
+
+    # Set the correct encoding for gzipped files
+    AddEncoding gzip .gz
+</IfModule>

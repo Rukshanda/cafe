@@ -6,7 +6,7 @@ function About() {
 
   return (
     <div className="about-sec">
-      <div className="about flex w-[100%] justify-between">
+      <div className="about flex w-[100%] justify-between gap-[50px]">
         <div className="about-text w-[50%]">
           <h1>About Us</h1>
           <p>
@@ -27,7 +27,7 @@ function About() {
             autoPlay
             muted
             loop
-            className="rounded-[100%] w-full h-full object-cover"
+            className=" rounded-[100%] w-full h-full object-cover"
           >
             <source src={video} type="video/mp4" />
             Your browser does not support the video tag.
